@@ -27,7 +27,7 @@ class Library:
             book.append(temp)
 
         bookAsStr = ','.join(book) #convert the book to a String Line
-        self.file.write(f'\n{bookAsStr}') #add the book to the file(database)
+        self.file.write(f'{bookAsStr}\n') #add the book to the file(database)
         print(f"Book '{book[0]} succesfully added.'")
 
     def removeBook(self):
@@ -49,7 +49,7 @@ class Library:
             print(f"Book '{BookName}' succesfully deleted.")
             f.truncate(0) #make the old txt file(db) size 0, also this erase all data in it.
             newDb = '\n'.join(list) #new text.file(database) with wanted book removed
-            f.write(newDb)
+            f.write(f'{newDb}\n')
         else:
             print(f"Book '{BookName}' can not be found.")
 
