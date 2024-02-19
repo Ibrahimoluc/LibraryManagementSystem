@@ -34,7 +34,7 @@ class Library:
         f = self.file
         f.seek(0) #come to the beginning of the file
         str = f.read() #read file
-        list = str.splitlines() # list every line
+        list = str.splitlines() # list every line of book
         BookName = input('BookName: ') #get name of the book which will be deleted
 
         found = False #if wanted book found or not
@@ -48,8 +48,9 @@ class Library:
         if found:
             print(f"Book '{BookName}' succesfully deleted.")
             f.truncate(0) #make the old txt file(db) size 0, also this erase all data in it.
-            newDb = '\n'.join(list) #new text.file(database) with wanted book removed
-            f.write(f'{newDb}\n')
+            if len(list)>0: #if list,which holds our books, has still books after removing the book, then we add those books to txt file(database). If there is only one book and we delete it(also len(list)==0), then there is nothing to add.
+                newDb = '\n'.join(list) #new text.file(database) with wanted book removed
+                f.write(f'{newDb}\n')
         else:
             print(f"Book '{BookName}' can not be found.")
 
