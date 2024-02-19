@@ -1,0 +1,1 @@
+Akbank Python BootCamp için python ile yazılmış LibrarySystemManagement projesidir. Projeyi kendim yaptım. İlk iki commit'i başka bilgisayardan fakat aynı hesapla(kendi hesabımla) yaptım. Neden kullanıcı adları farklı gözüküyor bilmiyorum.
