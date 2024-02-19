@@ -14,11 +14,14 @@ class Library:
         str = f.read() #read file
         list = str.splitlines() # list every line
 
-        for book in list:
-            bookAsList = book.split(',') #make a temporary list out of attributes for every book
-            for i in range(2): #print 'Name' and 'Autor' attributes of the book
-                print(f'{self.attributes[i]}: {bookAsList[i]} ')
-            print()
+        if len(list)>0:
+            for book in list:
+                bookAsList = book.split(',') #make a temporary list out of attributes for every book
+                for i in range(2): #print 'Name' and 'Autor' attributes of the book
+                    print(f'{self.attributes[i]}: {bookAsList[i]} ')
+                print()
+        else:
+            print("There is not any book.")
 
     def addBook(self):
         book = []
@@ -28,7 +31,7 @@ class Library:
 
         bookAsStr = ','.join(book) #convert the book to a String Line
         self.file.write(f'{bookAsStr}\n') #add the book to the file(database)
-        print(f"Book '{book[0]} succesfully added.'")
+        print(f"Book '{book[0]}' succesfully added.")
 
     def removeBook(self):
         f = self.file
